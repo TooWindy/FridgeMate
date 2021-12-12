@@ -18,8 +18,18 @@ async function seed() {
 
   const fridges = await Promise.all([
     Fridge.create({
-      ingredient: "carrot",
+      ingredient: "potato",
       quantity: 3,
+      userId: 1
+    }),
+    Fridge.create({
+      ingredient: "chicken",
+      quantity: 2,
+      userId: 1
+    }),
+    Fridge.create({
+      ingredient: "carrot",
+      quantity: 4,
       userId: 1
     }),
     Fridge.create({
