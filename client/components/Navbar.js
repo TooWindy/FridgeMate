@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
+import { clearFridge } from '../store/fridge'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
@@ -40,6 +41,7 @@ const mapDispatch = dispatch => {
   return {
     handleClick() {
       dispatch(logout())
+      dispatch(clearFridge())
     }
   }
 }
