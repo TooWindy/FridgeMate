@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import SingleIngredient from './Sub-Components/SingleIngredient'
 import Modal from 'react-modal'
 import { addIngredient } from '../store/fridge'
+import './MyFridge.css'
+import RecipeList from './Recipe'
 
 Modal.setAppElement('#app')
 /**
@@ -26,20 +28,25 @@ const MyFridge= () => {
   }
 
   return (
-    <div>
-      <div>
-      <h1>Welcome, {username}</h1>
-      <h2>Fridge Contents:</h2>
+    <div className={'fridge-container'}>
+      <div className={'ingredients-container'}>
+        <button style={{position: 'absolute', top: '40px', left: '250px'}} onClick={() => setModalIsOpen(true)}>Add an ingredient</button>
+        <h2>Fridge Contents:</h2>
+      <div style={{ overflow: 'auto', maxHeight: '85%' }}>
       {contents.map((item) => {
         return(
           <SingleIngredient key={item.id} ingredient={item} />
         )
       }
     )}
-      <div>
-        <button onClick={() => setModalIsOpen(true)}>Add an ingredient</button>
+    </div>
+        {/* <button style={{position: 'absolute', inset: '750px 250px 50px'}}onClick={() => setModalIsOpen(true)}>Add an ingredient</button> */}
+
       </div>
-      </div>
+        <div className={'right-container'}>
+          <RecipeList />
+        </div>
+
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
         <form onSubmit={(event) => handleSubmit(event)}>

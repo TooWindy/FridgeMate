@@ -4,6 +4,8 @@ import { getRecipes } from '../store/recipes'
 import tenRecipes from '../../script/tenRecipes'
 import SingleRecipe from './Sub-Components/SingleRecipe'
 
+import './MyFridge.css'
+
 const RecipeList = () => {
   const dispatch = useDispatch()
   const ingredients = useSelector((state) => state.fridge)
@@ -25,12 +27,19 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
 // const test=`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${formattedIngredientString}&number=20&apiKey=${process.env.API_KEY}`
 
   return (
-    <div>
-      {console.log(tenRecipes)}
-      <button onClick={() => dispatch(getRecipes(formattedIngredientString))}>Get Recipes</button>
-      {tenRecipes.map((item) => {
-      return <SingleRecipe key={item.id} recipe={item} />
-      })}
+    <div className={'recipe-container'}>
+      {/* {console.log(tenRecipes)} */}
+      <div style={{alignItems: 'stretch'}}>
+        <button onClick={() => dispatch(getRecipes(formattedIngredientString))}>Get Recipes</button>
+        <button>Get Random Recipe</button>
+        <button>Get Seasonal Recipe</button>
+      </div>
+      <h2>Your Recipes:</h2>
+      <div style={{ overflow: 'auto' }}>
+        {tenRecipes.map((item) => {
+          return <SingleRecipe key={item.id} recipe={item} />
+        })}
+      </div>
     </div>
   )
 }
