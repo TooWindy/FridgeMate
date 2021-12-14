@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import { clearFridge } from '../store/fridge'
+import { clearRecipes } from '../store/recipes'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
@@ -42,6 +43,7 @@ const mapDispatch = dispatch => {
     handleClick() {
       dispatch(logout())
       dispatch(clearFridge())
+      dispatch(clearRecipes())
     }
   }
 }

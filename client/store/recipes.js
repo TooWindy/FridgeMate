@@ -5,11 +5,18 @@ const sample = 'https://api.spoonacular.com/recipes/findByIngredients?ingredient
 
 //Action Types:
 const GET_RECIPES = 'GET_RECIPES'
+const CLEAR_RECIPES = 'CLEAR_RECIPES'
 //Action Creators
 const _getRecipes = (recipe) => {
   return {
     type: GET_RECIPES,
     recipe
+  }
+}
+
+export const clearRecipes = () => {
+  return {
+    type: CLEAR_RECIPES
   }
 }
 //Thunks
@@ -32,6 +39,8 @@ export default function (state = [], action) {
   switch (action.type) {
     case GET_RECIPES:
       return [...action.recipe]
+    case CLEAR_RECIPES:
+      return []
     default:
       return state;
   }
