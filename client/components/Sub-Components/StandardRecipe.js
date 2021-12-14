@@ -6,6 +6,7 @@ import SingleRecipe from './SingleRecipe'
 
 const StandardRecipe = (props) => {
   const ingredients = useSelector((state) => state.fridge)
+  const recipes = useSelector((state) => state.recipes || [])
   const dispatch = useDispatch()
 
   // const test=`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${formattedIngredientString}&number=20&apiKey=${process.env.API_KEY}`
@@ -28,7 +29,7 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
       <div>
       <button onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
       {/* switch tenRecipes with props.recipes when done testing*/}
-      {props.recipes.length > 0 ? (
+      {tenRecipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
           {/* switch tenRecipes with props.recipes when done testing*/}
           {tenRecipes.map((item) => {

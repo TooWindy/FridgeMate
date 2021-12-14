@@ -8,7 +8,6 @@ import RandomRecipe from './Sub-Components/RandomRecipe'
 import './MyFridge.css'
 
 const RecipeList = () => {
-  const recipes = useSelector((state) => state.recipes || [])
   const [view, setView] = useState('standardRecipes')
 
   const recipeClick = () => {
@@ -32,7 +31,7 @@ const RecipeList = () => {
         <button onClick={seasonalRecipeClick}>Seasonal Recipes</button>
       </div>
       <h2>Your Recipes:</h2>
-      <StandardRecipe currentState={view} recipes={recipes} />
+      <StandardRecipe currentState={view}/>
       <SeasonalRecipe currentState={view}/>
       <RandomRecipe currentState={view} />
     </div>
