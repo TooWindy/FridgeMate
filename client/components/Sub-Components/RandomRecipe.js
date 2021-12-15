@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getRandomRecipe } from '../../store/randomRecipe'
 import Modal from 'react-modal'
+import { Link } from 'react-router-dom'
+
 
 Modal.setAppElement('#app')
 
@@ -51,6 +53,7 @@ const RandomRecipe = (props) => {
               )
             })}
           <div>
+            <Link to={`/recipeDetails/${recipe.id}`}>View Recipe Details</Link>
             <button onClick={closeModal}>Close</button>
           </div>
         </div>

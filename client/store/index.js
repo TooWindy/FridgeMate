@@ -7,9 +7,10 @@ import fridge from './fridge'
 import recipes from './recipes'
 import randomRecipe from './randomRecipe'
 import seasonalRecipe from './seasonalRecipe'
+import recipeDetails from './recipeDetails'
 
 
-const reducer = combineReducers({ auth, fridge, recipes, randomRecipe, seasonalRecipe })
+const reducer = combineReducers({ auth, fridge, recipes, randomRecipe, seasonalRecipe, recipeDetails })
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

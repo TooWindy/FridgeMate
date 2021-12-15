@@ -4,8 +4,10 @@ import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import { clearFridge } from '../store/fridge'
 import { clearRandomRecipe } from '../store/randomRecipe'
+import { clearRecipeDetails } from '../store/recipeDetails'
 import { clearRecipes } from '../store/recipes'
 import { clearSeasonalRecipe } from '../store/seasonalRecipe'
+
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
@@ -48,6 +50,7 @@ const mapDispatch = dispatch => {
       dispatch(clearRecipes())
       dispatch(clearRandomRecipe())
       dispatch(clearSeasonalRecipe())
+      dispatch(clearRecipeDetails())
     }
   }
 }
