@@ -23,7 +23,7 @@ export const clearRandomRecipe = () => {
 export const getRandomRecipe =() => {
   return async(dispatch) => {
     try {
-      const response = await axios.get(`https://api.spoonacular.com/recipes/random?number=1&tags=dinner&apiKey=${apiKey}`)
+      const response = await axios.get(`https://api.spoonacular.com/recipes/random?number=1&tags=dinner&apiKey=${process.env.API_KEY}`)
       const recipeData = response.data.recipes[0]
       // console.log(response.data.recipes[0])
       dispatch(_getRandomRecipe(recipeData))

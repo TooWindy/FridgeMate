@@ -20,6 +20,7 @@ const RecipeDetails = (props) => {
             <div key={item.number}>
             <h2>Step: {item.number}</h2>
             <h3>Equipment Needed:</h3>
+
         {item.equipment.length > 0 ? (
         <div>
           {item.equipment.map((equipment) => {
@@ -33,6 +34,7 @@ const RecipeDetails = (props) => {
           })}
         </div>
           ): <li>None</li>}
+
           <h3>Ingredients Needed:</h3>
           {item.ingredients.map((ingredient) => {
             return (
@@ -43,6 +45,7 @@ const RecipeDetails = (props) => {
               </div>
             )
           })}
+
           <h3>Directions:</h3>
           <p>{item.step}</p>
             </div>

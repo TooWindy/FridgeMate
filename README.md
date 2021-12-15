@@ -1,47 +1,32 @@
-# FS-App-Template
+# Fridge Mate
+
+## Description
+
+Hi and welcome to Fridge Mate! This is my stackthon project which I had around 2 days to build for the FSA 2109 cohort. I used the FS-Template to build the foundations. This application is designed to help you come up with recipe ideas based on the current ingredients in your fridge. You can add/delete/update your ingredients and then search for recipes that utilize those types of ingredients. It used the Spoonacular API, to grab recipes. It also includes additional features such as giving you a random recipe NOT based on your fridge contents and some seasonal recipes. A final feature, is giving you directions to create the recipe. To get started, you can sign in using any credentials you wish (You can input any string for your credentials; but please make sure to remember your password if you do so!). The design is pretty bare due to the time constraints but I hope you enjoy using it and I hope it helps you!
+
+
+* The only limitation of the api is the information was very barebones for less popular recipes, so for some recipes, you may experience some less helpful information.
+
+* In order for this application to work, you will need an api key from Spoonacular at https://spoonacular.com/food-api
+
+* Alternatively, you can just access the site using heroku at....
 
 ## Setup
 
-To use this as boilerplate, you'll need to take the following steps:
-
-* Don't fork or clone this repo! Instead, create a new, empty
-  directory on your machine and `git init` (or create an empty repo on
-  Github and clone it to your local machine)
-
-* Now you will have to add the fs-app-template as a remote and merge it into your own repository.
+* Npm install
 
 ```
-git remote add boilermaker git@github.com:FullstackAcademy/fs-app-template.git
-git fetch boilermaker
-git merge boilermaker/main
-git branch -m master main
+npm install
+npm run start:dev
 ```
 
-## Customize
+## Seeding
 
-Now that you've got the code, follow these steps to get acclimated:
-
-* Update project name and description in `package.json`
-* `npm install`
-* Create two postgres databases (`MY_APP_NAME` should match the `name`
-  parameter in `package.json`):
-* These commands will create both your **development** and **test** databases
+* To run the starting seed, use "npm run seed" in the command line, this is just for sample users (cody and murphy).
 
 ```
-createdb <YOUR APP NAME HERE FROM package.json>
-createdb <YOUR APP NAME HERE FROM package.json>-test
+npm run seed
 ```
-
-* By default, running `npm test` will use your test database, while
-  regular development uses development database
-
-## Start
-
-Sync and seed your database by running `npm run seed`. Running `npm run start:dev` will make great things happen!
-
-- start:dev will both start your server and build your client side files using webpack
-- start:dev:logger is the same as start:dev, but you will see your SQL queries (can be helpful for debugging)
-- start:dev:seed will start your server and also seed your database (this is useful when you are making schema changes and you don't want to run your seed script separately)
 
 
 ### Heroku
