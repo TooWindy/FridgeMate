@@ -29,10 +29,10 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
       <div>
       <button onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
       {/* switch tenRecipes with props.recipes when done testing*/}
-      {tenRecipes.length > 0 ? (
+      {recipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
           {/* switch tenRecipes with props.recipes when done testing*/}
-          {tenRecipes.map((item) => {
+          {recipes.map((item) => {
           return <SingleRecipe key={item.id} recipe={item} />
           })}
         </div>

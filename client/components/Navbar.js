@@ -11,7 +11,7 @@ import { clearSeasonalRecipe } from '../store/seasonalRecipe'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div>
-    <h1>FS-App-Template</h1>
+    <h1>FridgeMate</h1>
     <nav>
       {isLoggedIn ? (
         <div>
