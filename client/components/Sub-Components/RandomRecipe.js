@@ -28,7 +28,7 @@ const RandomRecipe = (props) => {
   if(props.currentState === 'randomRecipes'){
     return (
       <div>
-        <button onClick={randomRecipeClick} >Get Random Recipe</button>
+        <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={randomRecipeClick} >Get Random Recipe</button>
         {randomRecipe.length > 0 ? (
         <div onClick={openModal}>
           <h1>{recipe.title}</h1>

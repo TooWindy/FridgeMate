@@ -27,7 +27,7 @@ const SeasonalRecipe = (props) => {
     return (
       <div>
         {/* {console.log(seasonalRecipes[0])} */}
-        <button onClick={() => dispatch(getSeasonalRecipe(seasonChart[currentMonth]))}>Get Seasonal Recipes</button>
+        <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={() => dispatch(getSeasonalRecipe(seasonChart[currentMonth]))}>Get Seasonal Recipes</button>
       {seasonalRecipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
           {seasonalRecipes.map((item) => {

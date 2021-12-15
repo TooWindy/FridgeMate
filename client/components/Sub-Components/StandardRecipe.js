@@ -27,7 +27,7 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
   if(props.currentState === 'standardRecipes') {
     return (
       <div>
-      <button onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
+      <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
       {/* switch tenRecipes with props.recipes when done testing*/}
       {recipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
