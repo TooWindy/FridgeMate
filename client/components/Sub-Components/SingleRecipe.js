@@ -22,6 +22,16 @@ const SingleRecipe = (props) => {
       <div>
         <h1>{recipe.title}</h1>
         <img src={recipe.image} />
+        <h4>Used Ingredients:</h4>
+        {recipe.usedIngredients.map((item) => {
+            return (
+              <div key={item.id}>
+                <li>
+                  {item.original}
+                </li>
+              </div>
+            )
+        })}
       </div>
 
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} >

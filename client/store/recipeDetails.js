@@ -1,5 +1,5 @@
 import axios from 'axios'
-const apiKey = process.env.API_KEY
+const apiKey = '98fd2f256fb14dbb9285a5abc6bddcce' //process.env.API_KEY
 
 //Action Type
 const GET_RECIPE_DETAILS = 'GET_RECIPE_DETAILS'

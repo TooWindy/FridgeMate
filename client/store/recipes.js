@@ -1,5 +1,5 @@
 import axios from 'axios'
-const apiKey = process.env.API_KEY
+const apiKey = '98fd2f256fb14dbb9285a5abc6bddcce' //process.env.API_KEY
 
 const sample = 'https://api.spoonacular.com/recipes/findByIngredients?ingredients=apples,+flour,+sugar&number=2&apiKey=98fd2f256fb14dbb9285a5abc6bddcce'
 
