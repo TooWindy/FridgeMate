@@ -1,5 +1,4 @@
 import axios from 'axios'
-const apiKey = '98fd2f256fb14dbb9285a5abc6bddcce' //process.env.API_KEY
 
 //Action Types
 const GET_SEASONAL_RECIPE = 'GET_SEASONAL_RECIPE'
@@ -22,8 +21,11 @@ export const clearSeasonalRecipe = () => {
 export const getSeasonalRecipe = (season) => {
   return async(dispatch) => {
     try {
-      const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${season}&number=5&fillIngredients=true&apiKey=${apiKey}`)
-      const recipeData = response.data.results
+      const token = localStorage.getItem('token')
+      const response = await axios.post('/api/fridge/getSeasonalRecipe', { season }, {
+        headers: { token }
+      } )
+      const recipeData = response.data
       // console.log(recipeData)
       dispatch(_getSeasonalRecipe(recipeData))
     }

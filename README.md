@@ -7,9 +7,9 @@ Hi and welcome to Fridge Mate! This is my stackthon project which I had around 2
 
 * The only limitation of the api is the information was very barebones for less popular recipes, so for some recipes, you may experience some less helpful information.
 
-* In order for this application to work, you will need an api key from Spoonacular at https://spoonacular.com/food-api
+* In order for this application to work locally, you will need an api key from Spoonacular at https://spoonacular.com/food-api
 
-* Alternatively, you can just access the site using heroku at....
+* Alternatively, you can just access the site using heroku at https://fridgemate2109.herokuapp.com/
 
 ## Setup
 

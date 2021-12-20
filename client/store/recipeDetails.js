@@ -1,5 +1,4 @@
 import axios from 'axios'
-const apiKey = '98fd2f256fb14dbb9285a5abc6bddcce' //process.env.API_KEY
 
 //Action Type
 const GET_RECIPE_DETAILS = 'GET_RECIPE_DETAILS'
@@ -23,9 +22,11 @@ export const clearRecipeDetails = () => {
 export const getRecipeDetails = (id) => {
   return async(dispatch) => {
     try {
-      const response = await axios.get(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`)
-      const recipeDetails = response.data[0]
-      // console.log(recipeDetails)
+      const token = localStorage.getItem('token')
+      const response = await axios.get(`/api/fridge/recipeDetails/${id}`, {
+        headers: { token }
+      })
+      const recipeDetails = response.data
       dispatch(_getRecipeDetails(recipeDetails))
     }
     catch(err){
