@@ -24,7 +24,7 @@ const RecipeList = () => {
 
   return (
     <div className={'recipe-container'}>
-      {console.log(view)}
+      {/* {console.log(view)} */}
       <div style={{alignItems: 'stretch'}}>
         <button className={'button standardRecipeButton'} onClick={recipeClick}>Your Recipes</button>
         <button className={'button randomRecipeButton'} onClick={randomRecipeClick}>Random Recipe</button>

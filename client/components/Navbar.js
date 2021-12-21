@@ -8,15 +8,15 @@ import { clearRecipeDetails } from '../store/recipeDetails'
 import { clearRecipes } from '../store/recipes'
 import { clearSeasonalRecipe } from '../store/seasonalRecipe'
 
-
 const Navbar = ({handleClick, isLoggedIn}) => (
-  <div>
-    <h1>FridgeMate</h1>
-    <nav>
+  <div className={'header'}>
+    <img className={'navImage'} src={'https://cdn-icons-png.flaticon.com/512/189/189925.png'}/>
+    <h1 className={'logo'}>FridgeMate</h1>
+    <nav className={'nav'}>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
+          <Link to="/home">My Fridge</Link>
           <a href="#" onClick={handleClick}>
             Logout
           </a>
@@ -29,7 +29,6 @@ const Navbar = ({handleClick, isLoggedIn}) => (
         </div>
       )}
     </nav>
-    <hr />
   </div>
 )
 

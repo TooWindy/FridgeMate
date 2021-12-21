@@ -63,7 +63,7 @@ const MyFridge= () => {
             <input type='text' name='quantity' value ={values.quantity} onChange={(event) => setValues({...values, quantity: event.target.value})} />
           </div>
           <div>
-            <button type='submit'>Create</button>
+            <button className={'button submitButton'} type='submit'>Create</button>
           </div>
         </form>
       </Modal>

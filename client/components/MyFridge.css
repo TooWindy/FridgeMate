@@ -103,6 +103,7 @@
 
 .submitButton {
   background-color: #4CAF50;
+  padding: 4px 50px;
 }
 
 .submitButton:hover {

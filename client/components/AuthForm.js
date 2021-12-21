@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {authenticate} from '../store'
+import './AuthForm.css'
 
 /**
  * COMPONENT
@@ -9,25 +10,29 @@ const AuthForm = props => {
   const {name, displayName, handleSubmit, error} = props
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="username">
-            <small>Username</small>
-          </label>
-          <input name="username" type="text" />
+    <div className={'login-component'}>
+      <div className={'login-component-container'}>
+      <div className={'login-wrapper'}>
+      {displayName === 'Login' ? (
+        <h2 className={'login-header'}>Sign In Here!</h2>
+      ): <h2 className={'login-header'}>Sign Up Here!</h2>
+      }
+      <form className={'login-component-form'} onSubmit={handleSubmit} name={name}>
+          <div className={'login-input-wrapper'}>
+            <label htmlFor="username"></label>
+            <input name="username" type="text" placeholder='Username' />
+          </div>
+          <div className={'login-input-wrapper'}>
+            <label htmlFor="password"></label>
+            <input name="password" type="password" placeholder='Password' />
+          </div>
+
+            <button id='submitButton'type="submit">{displayName}</button>
+
+          {error && error.response && <div> {error.response.data} </div>}
+        </form>
         </div>
-        <div>
-          <label htmlFor="password">
-            <small>Password</small>
-          </label>
-          <input name="password" type="password" />
-        </div>
-        <div>
-          <button type="submit">{displayName}</button>
-        </div>
-        {error && error.response && <div> {error.response.data} </div>}
-      </form>
+      </div>
     </div>
   )
 }
