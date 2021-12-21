@@ -34,10 +34,10 @@ const SingleIngredient = (props) => {
     <div>
       {/* {console.log(values)} */}
       <div key ={ingredient.id}>
-        <h3>Ingredient: {ingredient.ingredient}</h3>
-        <h3>Quantity: {ingredient.quantity}</h3>
-        <button onClick={openModal}>Edit Ingredient</button>
-        <button onClick={() => dispatch(deleteIngredient(ingredient.id))}>Delete Ingredient</button>
+        <h3 className={'title'}>Ingredient: {ingredient.ingredient}</h3>
+        <h3 className={'title'}>Quantity: {ingredient.quantity}</h3>
+        <button className={'button editButton'} onClick={openModal}>Edit Ingredient</button>
+        <button className={'button deleteButton'} onClick={() => dispatch(deleteIngredient(ingredient.id))}>Delete Ingredient</button>
       </div>
 
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal}>
@@ -56,7 +56,7 @@ const SingleIngredient = (props) => {
             <input type='text' name='quantity' value={values.quantity} onChange={(event) => setValues({...values, quantity: event.target.value})} />
           </div>
           <div>
-            <button type='submit'>Submit</button>
+            <button className={'button submitButton'} type='submit'>Submit</button>
           </div>
           </form>
       </Modal>

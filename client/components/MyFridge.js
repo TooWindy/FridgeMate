@@ -30,8 +30,8 @@ const MyFridge= () => {
   return (
     <div className={'fridge-container'}>
       <div className={'ingredients-container'}>
-        <button style={{position: 'absolute', top: '40px', left: '250px'}} onClick={() => setModalIsOpen(true)}>Add an ingredient</button>
-        <h2>Fridge Contents:</h2>
+
+        <h2 className={'title'}><b>Fridge Contents:</b></h2>
       <div style={{ overflow: 'auto', maxHeight: '85%' }}>
       {contents.map((item) => {
         return(
@@ -40,8 +40,7 @@ const MyFridge= () => {
       }
     )}
     </div>
-        {/* <button style={{position: 'absolute', inset: '750px 250px 50px'}}onClick={() => setModalIsOpen(true)}>Add an ingredient</button> */}
-
+        <button className={'button addButton'} onClick={() => setModalIsOpen(true)}>Add an ingredient</button>
       </div>
         <div className={'right-container'}>
           <RecipeList />
@@ -81,4 +80,5 @@ const MyFridge= () => {
 //   }
 // }
 
+// style={{position: 'absolute', top: '40px', left: '250px'}}
 export default MyFridge
