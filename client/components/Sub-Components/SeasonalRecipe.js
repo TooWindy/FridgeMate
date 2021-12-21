@@ -27,14 +27,16 @@ const SeasonalRecipe = (props) => {
     return (
       <div>
         {/* {console.log(seasonalRecipes[0])} */}
-        <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={() => dispatch(getSeasonalRecipe(seasonChart[currentMonth]))}>Get Seasonal Recipes</button>
+        <div className={'recipeButtonDiv'}>
+          <button className={'getRecipeButton'} onClick={() => dispatch(getSeasonalRecipe(seasonChart[currentMonth]))}>Get Seasonal Recipes</button>
+        </div>
       {seasonalRecipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
           {seasonalRecipes.map((item) => {
           return <SingleRecipe key={item.id} recipe={item} />
           })}
         </div>
-        ) : <img src='https://i.imgflip.com/5xuk3u.jpg' />
+        ) : <img className={'image'} src='https://i.imgflip.com/5xuk3u.jpg' />
       }
       </div>
     )

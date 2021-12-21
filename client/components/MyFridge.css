@@ -109,3 +109,24 @@
   background-color: #367738;
   color:white
 }
+
+/* Right Side Container Buttons */
+
+.getRecipeButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 100px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: auto;
+  border-radius: 10px;
+  transition-duration: 0.4s;
+}
+
+.getRecipeButton:hover {
+  background-color: #367738; /* Green */
+  color: white;
+}

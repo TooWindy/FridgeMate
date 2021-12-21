@@ -28,13 +28,15 @@ const RandomRecipe = (props) => {
   if(props.currentState === 'randomRecipes'){
     return (
       <div>
-        <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={randomRecipeClick} >Get Random Recipe</button>
+        <div className={'recipeButtonDiv'}>
+          <button  className={'getRecipeButton'} onClick={randomRecipeClick} >Get Random Recipe</button>
+        </div>
         {randomRecipe.length > 0 ? (
         <div onClick={openModal}>
           <h1>{recipe.title}</h1>
           <img src={recipe.image}></img>
         </div>
-        ) : <img src='https://i.imgflip.com/5xuk3u.jpg' />
+        ) : <img className={'image'} src='https://i.imgflip.com/5xuk3u.jpg' />
       }
 
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} >

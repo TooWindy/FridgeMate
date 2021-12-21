@@ -20,7 +20,14 @@ form div {
   display: inline-block;
 }
 
+.recipeButtonDiv {
+  text-align: center;
+}
 .title {
   font-family: 'Trebuchet MS';
 }
 
+.image {
+  width: auto;
+  height: 600px;
+}

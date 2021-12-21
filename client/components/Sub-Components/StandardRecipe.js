@@ -27,7 +27,9 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
   if(props.currentState === 'standardRecipes') {
     return (
       <div>
-      <button style={{position: 'absolute', right: '650px', top: '270px'}} onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
+        <div className={'recipeButtonDiv'}>
+          <button  className={'getRecipeButton'}onClick={() =>dispatch(getRecipes(formattedIngredientString)) }>Get Recipes</button>
+        </div>
       {/* switch tenRecipes with props.recipes when done testing*/}
       {recipes.length > 0 ? (
         <div style={{ overflow: 'auto', maxHeight:'650px' }}>
@@ -36,7 +38,7 @@ const formattedIngredientString= ingredientString.slice(0,ingredientString.lengt
           return <SingleRecipe key={item.id} recipe={item} />
           })}
         </div>
-        ) : <img src='https://i.imgflip.com/5xuk3u.jpg' />
+        ) : <img className={'image'} src='https://i.imgflip.com/5xuk3u.jpg' />
       }
     </div>
     )
