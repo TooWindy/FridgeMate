@@ -88,7 +88,7 @@
 }
 
 .editButton:hover {
-  background-color:#03a9f4;
+  background-color:#278dbd;
   color: white;
 }
 
@@ -125,8 +125,31 @@
   border-radius: 10px;
   transition-duration: 0.4s;
 }
-
 .getRecipeButton:hover {
   background-color: #367738; /* Green */
+  color: white;
+}
+
+.standardRecipeButton {
+  background-color: #00755E;
+}
+.standardRecipeButton:hover {
+  background-color: #04b491;
+  color: white;
+}
+
+.randomRecipeButton {
+  background-color: #1982c4;
+}
+.randomRecipeButton:hover {
+  background-color: #21a8fc;
+  color: white;
+}
+
+.seasonalReciptButton {
+  background-color: #4b3668;
+}
+.seasonalReciptButton:hover {
+  background-color: #a678e6;
   color: white;
 }
